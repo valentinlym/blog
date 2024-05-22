@@ -1,0 +1,19 @@
+@import './sass/base/base';
+@import './sass/base/header';
+@import './sass/base/footer';
+@import './sass/base/btn';
+@import './sass/base/input';
+@import './sass/pages/accueil';
+@import './sass/pages/offreDeStage';
+@import './sass/pages/login';
+@import './sass/pages/presentation';
+@import './sass/pages/douceSaveur';
+@import './sass/pages/candidature';
+@import './sass/pages/traiteur';
+
+.example-wrapper {
+    font: 18px / 1.5 sans-serif;
+    height: 800px;
+    padding: 88px 80px 0 80px;
+    background: var(--secondaire);
+}

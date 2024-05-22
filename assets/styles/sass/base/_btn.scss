@@ -1,0 +1,71 @@
+.btn {
+    position: relative;
+    display: block;
+    border: none;
+    border-radius: 0;
+    font-weight: 500;
+    padding: 14px 24px;
+    font-size: 14px;
+    font-family: "Visuelt Pro";
+    width: fit-content;
+    min-height: 48px;
+    cursor: pointer;
+    z-index: 1;
+
+    &__primaire,
+    &__secondaire {
+        background: var(--primaire);
+        color: var(--secondaire);
+
+        &:hover {
+            padding: 14px 2rem 14px 1rem;
+            max-height: 48px;
+
+            &::after {
+                content: '';
+                background-image: url('/assets/src/svg/arrow.svg');
+                background-size: 16px;
+                position: absolute;
+                top: 50%;
+                right: 1em;
+                transform: translateY(-50%);
+                width: 16px;
+                height: 16px;
+            }
+        }
+    }
+
+    &__secondaire {
+        background: none;
+        color: var(--primaire);
+        text-decoration: underline;
+
+        &:hover::after {
+            background-image: url('/assets/src/svg/arrow--black.svg');
+        }
+
+    }
+
+    &--danger {
+        background: var(--e100);
+        color: var(--e900);
+
+        &:hover {
+            background: var(--e500);
+            color: var(--e100);
+        }
+    }
+
+    &:disabled {
+        text-decoration: none;
+        cursor: default;
+        border: var(--t900) solid 1px;
+        background: none;
+        color: var(--t900);
+        font-weight: 400;
+
+        .btn {
+            width: max-contents;
+        }
+    }
+}

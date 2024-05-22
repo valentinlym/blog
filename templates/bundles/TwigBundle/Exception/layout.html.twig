@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Erreur
+{% endblock %}
+
+{% block body %}
+	<div class="container" style="background: var(--e100);height:90vh;display:flex; justify-content:center;align-items:center;flex-direction:column;">
+		<h2 style="color:var(--e900);">
+			{% block error %}{% endblock %}
+		</h2>
+		<p style="color:var(--e900);">
+			{% block error_detail %}{% endblock %}
+		</p>
+		<a href="/" class="btn btn__primaire" style="margin-top:24px;height:20px;" >Revenez en lieu sur</a>
+	</div>
+{% endblock %}

@@ -1,0 +1,84 @@
+.candidature {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 48px 16px 56px 16px;
+    height: fit-content;
+    gap: 24px;
+    width: 100%;
+
+
+    &__left {
+        h2 {
+            width: 567px;
+        }
+
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        button {
+            max-width: 80vw;
+
+            &:hover {
+                text-decoration: underline;
+                padding: 14px 24px;
+            }
+
+            &::after {
+                display: none;
+            }
+        }
+    }
+
+    .champ {
+        width: 80vw;
+    }
+
+    &__right {
+        margin-bottom: 80px;
+
+        .card {
+            box-shadow: 8px 8px var(--primaire);
+        }
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    .candidature {
+        padding: 48px 6.25vw;
+        display: flex;
+        gap: 6.25vw;
+        flex-direction: row;
+        align-items: center;
+
+        &__left {
+            h2 {
+                width: 567px;
+            }
+
+            & button {
+                max-width: 400px;
+            }
+
+            & .champ {
+                max-width: 400px;
+            }
+
+            &__text {
+                padding: 0;
+            }
+
+            &__img {
+                display: none;
+
+                &--desktop {
+                    display: block;
+                }
+            }
+        }
+
+        &__right {
+            margin-bottom: 0;
+        }
+    }
+}

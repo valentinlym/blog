@@ -1,0 +1,54 @@
+.douce-saveur {
+  &__text {
+    padding: 48px 16px 56px 16px;
+
+    & h2 {
+      line-height: 110%;
+      margin-bottom: 16px;
+      letter-spacing: -0.57px;
+    }
+
+    & p {
+      text-align: justify;
+      font-weight: 400;
+      line-height: 175%;
+      letter-spacing: -0.304px;
+    }
+  }
+
+  &__img {
+    display: flex;
+    justify-content: center;
+    width: auto;
+
+    &--desktop {
+      display: none;
+    }
+
+    & img {
+      width: 375px;
+      height: 275px;
+    }
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .douce-saveur {
+    padding: 48px 6.25vw;
+    display: flex;
+    gap: 6.25vw;
+    flex-direction: row;
+
+    &__text {
+      padding: 0;
+    }
+
+    &__img {
+      display: none;
+
+      &--desktop {
+        display: block;
+      }
+    }
+  }
+}
