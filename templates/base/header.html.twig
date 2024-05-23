@@ -1,10 +1,9 @@
 <header class="header">
 	<a href="/" style="text-decoration:none">
 		<div class="header__logo">
-			<img class="header__logo__img" src="{{ asset('build/images/svg/Logo_BLOG.svg') }}" alt="logo de Pierre LeFournier" />
+			<img class="header__logo__img" src="{{ asset('build/images/svg/Logo_BLOG.svg') }}" alt="logo du BLOG" />
 		</div>
 	</a>
-	{# accueil les catégories Inscription identification Espace admin #}
 	<input type="checkbox" class="menu-checkbox" id="menuToggle">
 	<label for="menuToggle" class="menu-icon">
 		<img id="close" class="header__icon header__icon open" src="{{ asset('build/images/svg/burger_menu--close.svg') }}" alt="Icon du menu"/>
@@ -13,13 +12,13 @@
 	<nav id="navbar" class="header__nav">
 		<div class="header__nav__links">
 			<div tabindex="0" class="header__nav__link">
-				<a title="Catégories" href="/presentation">Catégories</a>
+				<a title="Articles" href="/articles">Articles</a>
 			</div>
 			<div tabindex="0" class="header__nav__link">
-				<a title="Inscription" href="/register">Inscription</a>
+				<a title="Catégories" href="/categories">Catégories</a>
 			</div>
 			<div tabindex="0" class="header__nav__link">
-				<a title="Identification" href="/login">Identification</a>
+				<a title="Autheurs" href="/autheurs">Autheurs</a>
 			</div>
 			<div tabindex="0" class="header__nav__link">
 				<a title="Espace admin" href="/admin">Espace admin</a>
@@ -32,16 +31,16 @@
 	<nav class="desktop--header__nav">
 		<div class="desktop--header__nav__links">
 			<div tabindex="0" class="desktop--header__nav__link">
-				<a title="Catégories" href="/presentation">Catégories</a>
+				<a title="Articles" href="/articles">Articles</a>
 			</div>
 			<div tabindex="0" class="desktop--header__nav__link">
-				<a title="Inscription" href="/register">Inscription</a>
+				<a title="Catégories" href="/categories">Catégories</a>
 			</div>
 			<div tabindex="0" class="desktop--header__nav__link">
-				<a title="Identification" href="/login">Identification</a>
+				<a title="Autheurs" href="/authors">Autheurs</a>
 			</div>
 			<div tabindex="0" class="desktop--header__nav__link">
-				<a title="Espace admin" href="/admin">Espace admin</a>
+				<a title="Espace admin" href="/admin">🔒 Espace admin</a>
 			</div>
 		</div>
 		{# <a target="_blank" href="https://www.instagram.com/">

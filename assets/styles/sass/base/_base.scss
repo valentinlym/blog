@@ -19,6 +19,13 @@
     padding: 0;
 }
 
+
+html,
+body {
+    height: 100%;
+    background: var(--secondaire);
+}
+
 // Typographie
 
 @font-face {
@@ -93,6 +100,7 @@ h3 {
     line-height: 150%;
     letter-spacing: -0.456px;
 }
+
 h4 {
     font-size: 20px;
     line-height: 21px;
@@ -112,9 +120,17 @@ label {
     letter-spacing: -0.266px;
 }
 
+
+.allSite {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
 .container {
-    padding-top: 80px;
-    background: var(--secondaire);
+    display: flex;
+    flex-grow: 1;
+    margin: 24px 6.25vw;
 }
 
 .section {
@@ -122,9 +138,10 @@ label {
 }
 
 @media screen and (min-width: 650px) {
-    .container {
-        padding-top: 88px;
+    main.container {
+        margin-top: 112px;
     }
+
     .section {
         padding: 0 80px;
     }
@@ -132,6 +149,6 @@ label {
     h1,
     h2 {
         // font-siez min 30
-        font-size: max(3.125vw, 30px);
+        font-size: max(3.125vw, 33px);
     }
 }

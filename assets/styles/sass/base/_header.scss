@@ -1,14 +1,14 @@
 .header {
     width: 100%;
-    display: flex;
+    z-index: 10;
     height: 80px;
+    display: flex;
     position: fixed;
     min-width: 375px;
     padding: 8px 16px;
     border-bottom: 0.5px solid;
     background: var(--secondaire);
     justify-content: space-between;
-    z-index: 10;
 
     &__logo {
         padding: 8px;

@@ -21,8 +21,11 @@
 		{% endblock %}
 	</head>
 	<body>
-		{% include 'base/header.html.twig' %}
-		{% block body %}{% endblock %}
-		{% include 'base/footer.html.twig' %}
-	</body>
-</html>
+		<div class="allSite">
+			{% include 'base/header.html.twig' %}
+			<main class="container"> {% block body %}{% endblock %}
+				</main>
+				{% include 'base/footer.html.twig' %}
+			</div>
+		</body>
+	</html>
