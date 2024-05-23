@@ -87,6 +87,7 @@ h4 {
     line-height: 110%;
     letter-spacing: -0.57px;
     color: var(--primaire);
+    padding-bottom: 40px;
 }
 
 h2 {
@@ -110,7 +111,8 @@ h4 {
 
 p,
 a,
-label {
+label,
+span p {
     color: var(--primaire);
     font-family: Visuelt Pro;
     font-size: 16px;
@@ -119,7 +121,6 @@ label {
     line-height: 155%;
     letter-spacing: -0.266px;
 }
-
 
 .allSite {
     display: flex;
@@ -130,13 +131,16 @@ label {
 .container {
     display: flex;
     flex-grow: 1;
-    margin: 24px 6.25vw;
+    margin: 104px auto;
+    width: min(90vw,800px);
 }
 
 .section {
     padding: 0 16px;
 }
-
+form {
+    width: 100%;
+}
 @media screen and (min-width: 650px) {
     main.container {
         margin-top: 112px;
@@ -149,6 +153,7 @@ label {
     h1,
     h2 {
         // font-siez min 30
-        font-size: max(3.125vw, 33px);
+        font-size: max(3.125vw, 44px);
+        padding-bottom: 40px;
     }
 }

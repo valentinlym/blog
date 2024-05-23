@@ -11,13 +11,14 @@
 
 		<h1>Register</h1>
 
-		{{ form_start(registrationForm) }}
-		{{ form_row(registrationForm.email) }}
+		{{ form_start(registrationForm, {'attr': {'id': 'sumitForm', 'class': 'devis'}}) }}
+		{{ form_row(registrationForm.email, {'attr': {'class': 'champ champ__input'}}) }}
 		{{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
+			'attr': {'class': 'champ champ__input'},
+            label: 'Mot de passe'
         }) }}
 
-		<button type="submit" class="btn">Register</button>
+		<button style="margin-top:24px" type="submit" id="btnSoumettre" class="btn" disabled>Register</button>
 		{{ form_end(registrationForm) }}
 	</div>
 {% endblock %}

@@ -1,29 +1,28 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Category
+{% block title %}Category index
 {% endblock %}
 
 {% block body %}
-	<div class="example-wrapper">
-		<h1>Category</h1>
+	<div class="categories">
+		<h1>{{ category.label|capitalize }}</h1>
+		<p>
+			Retrouvez les articles concernant la catégorie "{{ category.label }}" ici.
+		</p>
 
-		<table class="table">
-			<tbody>
-				<tr>
-					<th>Id</th>
-					<td>{{ category.id }}</td>
-				</tr>
-				<tr>
-					<th>Label</th>
-					<td>{{ category.label }}</td>
-				</tr>
-			</tbody>
-		</table>
-
-		<a href="{{ path('app_admin_category_index') }}">back to list</a>
-
-		<a href="{{ path('app_admin_category_edit', {'id': category.id}) }}">edit</a>
-
-		{{ include('admin_category/_delete_form.html.twig') }}
+		<div class="categories__container">
+			{% for article in category.articles %}
+				<a href="{{ path('app_admin_category_show', {'id': category.id}) }}" class="categories__item">
+					<div>
+						<p>{{ article.title }}</p>
+					</div>
+					<div>
+						<p>{{ article.userId|slice(start, length) }}</p>
+					</div>
+				</a>
+			{% else %}
+				<p>Aucun résultat trouvé</p>
+			{% endfor %}
+		</div>
 	</div>
-{% endblock %}
+</div>{% endblock %}
