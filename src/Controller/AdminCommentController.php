@@ -5,12 +5,10 @@ namespace App\Controller;
 use App\Entity\Comment;
 use App\Form\CommentType;
 use App\Repository\CommentRepository;
-use DateTimeImmutable;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Validator\Constraints\Date;
 
 /**
  * @Route("/admin/comment")
@@ -33,8 +31,11 @@ class AdminCommentController extends AbstractController
     public function new(Request $request, CommentRepository $commentRepository): Response
     {
         $comment = new Comment();
-        $comment->setCreatedAt(new DateTimeImmutable());
-        $form = $this->createForm(CommentType::class, $comment);
+        $comment->setCreatedAt(new \DateTimeImmutable());
+        $form = $this->createForm(CommentType::class, $comment, [
+            'article' => true,
+            'user' => true,
+        ]);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -84,7 +85,7 @@ class AdminCommentController extends AbstractController
      */
     public function delete(Request $request, Comment $comment, CommentRepository $commentRepository): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$comment->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $comment->getId(), $request->request->get('_token'))) {
             $commentRepository->remove($comment, true);
         }
 

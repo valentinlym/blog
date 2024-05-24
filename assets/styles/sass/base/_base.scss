@@ -109,10 +109,24 @@ h4 {
     letter-spacing: -0.38px;
 }
 
+hr {
+    margin: 24px 0;
+    border: none;
+    background: var(--primaire);
+    height: .5px;
+    width: 16vw;
+}
+
+table {
+    width: 100%;
+    text-align: left;
+}
+
 p,
 a,
 label,
-span p {
+span p,
+table {
     color: var(--primaire);
     font-family: Visuelt Pro;
     font-size: 16px;
@@ -137,6 +151,7 @@ span p {
 .section {
     padding: 0 16px;
 }
+
 form {
     width: 100%;
 }
@@ -144,6 +159,7 @@ form {
 .example-wrapper {
     width: 100%;
 }
+
 @media screen and (min-width: 650px) {
     main.container {
         margin-top: 112px;

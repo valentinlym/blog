@@ -28,6 +28,9 @@
 				<a href="{{ path('app_logout') }}">S'inscrire</a>
 			</p>
 		{% endif %}
+		<p style="margin: 16px 0 24px 0;">Vous avez oublié votre mot de passe ?
+			<a href="{{ path('app_forgot_password_request') }}">Mot de passe oublié</a>
+		</p>
 		<button id="btnSoumettre" class="btn" type="submit" disabled>
 			Se connecter
 		</button>

@@ -17,8 +17,18 @@
 			'attr': {'class': 'champ champ__input'},
             label: 'Mot de passe'
         }) }}
-
-		<button style="margin-top:24px" type="submit" id="btnSoumettre" class="btn" disabled>Register</button>
+		{% if app.user %}
+			<p style="margin: 16px 0 24px 0;">
+				Vous êtes connecté avec
+				{{ app.user.userIdentifier }},
+				<a href="{{ path('app_logout') }}">Déconnection</a>
+			</p>
+		{% else %}
+			<p style="margin: 16px 0 24px 0;">Vous avez déjà un compte ?
+				<a href="{{ path('app_login') }}">Se connecter</a>
+			</p>
+		{% endif %}
+		<button style="margin-top:24px" type="submit" id="btnSoumettre" class="btn" disabled>S'inscrire</button>
 		{{ form_end(registrationForm) }}
 	</div>
 {% endblock %}

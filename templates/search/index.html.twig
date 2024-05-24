@@ -1,15 +1,34 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello SearchController!{% endblock %}
+{% block title %}Recherche
+{% endblock %}
 
 {% block body %}
-<div class="example-wrapper">
-    <h1>{{ controller_name }}</h1>
+	<div class="show">
+		<h1>Recherche</h1>
+		<form action="{{ path('app_search') }}" method="get">
+			<div style="width:40px;display:flex;width:50%;margin-bottom:24px;">
+				<input class="champ__input" name="search" type="search" placeholder="Recherche" aria-label="Search">
+				<button class="btn btn__primaire" type="submit">Chercher</button>
+			</div>
+		</form>
+		<h3>Voici ce qui correspond à votre recherche :</h3>
 
-    <p>This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/Users/vaal/workspace/dev/php/blog/src/Controller/SearchController.php'|file_link(0) }}">src/Controller/SearchController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/Users/vaal/workspace/dev/php/blog/templates/search/index.html.twig'|file_link(0) }}">templates/search/index.html.twig</a></code></li>
-    </ul>
-</div>
+		<div class="show__container">
+			{% for article in articles %}
+				<a href="{{ path('app_article_show', {'id': article.id}) }}" class="show__item">
+					<div>
+						<p>
+							<strong>{{ article.title }}</strong>
+						</p>
+					</div>
+					<div>
+						<p>{{ article.userId}}</p>
+					</div>
+				</a>
+			{% else %}
+				<p>Aucun résultat trouvé</p>
+			{% endfor %}
+		</div>
+	</div>
 {% endblock %}
