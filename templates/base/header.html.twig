@@ -1,0 +1,48 @@
+<header class="header">
+	<a href="/" style="text-decoration:none">
+		<div class="header__logo">
+			<img class="header__logo__img" src="{{ asset('build/images/svg/Logo_BLOG.svg') }}" alt="logo du BLOG"/>
+		</div>
+	</a>
+	<input type="checkbox" class="menu-checkbox" id="menuToggle">
+	<label for="menuToggle" class="menu-icon">
+		<img id="close" class="header__icon header__icon open" src="{{ asset('build/images/svg/burger_menu--close.svg') }}" alt="Icon du menu"/>
+		<img id="open" class="header__icon header__icon" src="{{ asset('build/images/svg/burger_menu.svg') }}" alt="Icon du menu"/>
+	</label>
+	<nav id="navbar" class="header__nav">
+		<div class="header__nav__links">
+			<div tabindex="0" class="header__nav__link">
+				<a title="Articles" href="/articles">Articles</a>
+			</div>
+			<div tabindex="0" class="header__nav__link">
+				<a title="Catégories" href="/categories">Catégories</a>
+			</div>
+			{% if is_granted('ROLE_ADMIN') %}
+				<div tabindex="0" class="header__nav__link">
+					<a title="Espace admin" href="/admin">Espace admin</a>
+				</div>
+			{% endif %}
+		</div>
+		{# <a target="_blank" href="https://www.instagram.com/">
+															<img src="{{ asset('build/images/svg/instagram.svg') }}" alt="logo d'instagram"/>
+														</a> #}
+	</nav>
+	<nav class="desktop--header__nav">
+		<div class="desktop--header__nav__links">
+			<div tabindex="0" class="desktop--header__nav__link">
+				<a title="Articles" href="/articles">Articles</a>
+			</div>
+			<div tabindex="0" class="desktop--header__nav__link">
+				<a title="Catégories" href="/categories">Catégories</a>
+			</div>
+			{% if is_granted('ROLE_ADMIN') %}
+				<div tabindex="0" class="desktop--header__nav__link">
+					<a title="Espace admin" href="/admin">Espace admin</a>
+				</div>
+			{% endif %}
+		</div>
+		{# <a target="_blank" href="https://www.instagram.com/">
+															<img src="{{ asset('build/images/svg/instagram.svg') }}" alt="logo d'instagram"/>
+														</a> #}
+	</nav>
+</header>

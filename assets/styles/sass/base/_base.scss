@@ -1,0 +1,178 @@
+:root {
+    --primaire: #111827;
+    --secondaire: #fafbff;
+    --t500: #d9d9de;
+    --t900: #6f6f6f;
+    --s100: #ecfdf5;
+    --s500: #34d399;
+    --s900: #047857;
+    --e100: #fee2e2;
+    --e500: #f87171;
+    --e900: #991b1b;
+}
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html,
+body {
+    height: 100%;
+    background: var(--secondaire);
+}
+
+// Typographie
+
+@font-face {
+    font-family: "Visuelt Pro";
+    src: url("/assets/fonts/VisueltPro-Thin.ttf") format("truetype"), url("/assets/fonts/VisueltPro-ThinItalic.ttf") format("truetype");
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: "Visuelt Pro";
+    src: url("/assets/fonts/VisueltPro-ExtraLight.ttf") format("truetype"), url("/assets/fonts/VisueltPro-ExtraLightItalic.ttf") format("ttf");
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: "Visuelt Pro";
+    src: url("/assets/fonts/VisueltPro-Light.ttf") format("truetype"), url("/assets/fonts/VisueltPro-LightItalic.ttf") format("truetype");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Visuelt Pro";
+    src: url("/assets/fonts/VisueltPro-Medium.ttf") format("truetype"), url("/assets/fonts/VisueltPro-MediumItalic.ttf") format("truetype");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Visuelt Pro";
+    src: url("/assets/fonts/VisueltPro-Bold.ttf") format("truetype"), url("/assets/fonts/VisueltPro-BoldItalic.ttf") format("truetype");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Visuelt Pro";
+    src: url("/assets/fonts/VisueltPro-Black.ttf") format("truetype"), url("/assets/fonts/VisueltPro-BlackItalic.ttf") format("truetype");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Visuelt Pro";
+    src: url("/assets/fonts/VisueltPro-Regular.ttf") format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "DM Serif Display";
+    src: url("/assets/fonts/DMSerifDisplay-Regular.ttf") format("truetype");
+    font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: "DM Serif Display";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    letter-spacing: -0.57px;
+    color: var(--primaire);
+    padding-bottom: 40px;
+}
+
+h2 {
+    font-size: 30px;
+    line-height: 150%;
+    letter-spacing: -0.456px;
+}
+
+h3 {
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: -0.456px;
+}
+
+h4 {
+    font-size: 20px;
+    line-height: 21px;
+    font-style: italic;
+    letter-spacing: -0.38px;
+}
+
+hr {
+    margin: 24px 0;
+    border: none;
+    background: var(--primaire);
+    height: .5px;
+    width: 16vw;
+}
+
+table {
+    width: 100%;
+    text-align: left;
+}
+
+p,
+a,
+label,
+span p,
+table {
+    color: var(--primaire);
+    font-family: Visuelt Pro;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 155%;
+    letter-spacing: -0.266px;
+}
+
+.allSite {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.container {
+    display: flex;
+    flex-grow: 1;
+    margin: 104px 16vw;
+}
+
+.section {
+    padding: 0 16px;
+}
+
+form {
+    width: 100%;
+}
+
+.example-wrapper {
+    width: 100%;
+}
+
+@media screen and (min-width: 650px) {
+    main.container {
+        margin-top: 112px;
+    }
+
+    .section {
+        padding: 0 80px;
+    }
+
+    h1,
+    h2 {
+        // font-siez min 30
+        font-size: max(3.125vw, 44px);
+        padding-bottom: 40px;
+    }
+}

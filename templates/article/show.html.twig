@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Article
+{% endblock %}
+
+{% block body %}
+
+	<article class="show">
+		<h1>{{article.title}}</h1>
+		<p>{{article.content}}</p>
+		<hr>
+		<div class="comments">
+			<h3>Commentaires</h3>
+			{% if app.user %}
+				{{ include('article/_form.html.twig') }}
+			{% endif %}
+			<div class="comments__show">
+				{% for comment in article.comments %}
+					<p>{{ comment.userId }}</p>
+					<p>{{ comment.content }}</p>
+					<hr>
+				{% endfor %}
+			</div>
+		</div>
+	</article>
+
+{% endblock %}

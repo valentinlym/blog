@@ -1,0 +1,93 @@
+.login {
+    background: var(--secondaire);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    &__left {
+        background: var(--secondaire);
+        padding: 24px 16px;
+        width: 343px;
+
+        &__img {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+
+        .btn {
+            width: 100%;
+            margin-top: 16px;
+
+            &::after {
+                right: 6rem;
+            }
+
+        }
+
+        &__alert {
+            color: var(--e900);
+        }
+
+        a {
+            // text-decoration: underline;
+
+            &:hover {
+                font-weight: 500;
+            }
+        }
+    }
+
+    &__champs {
+        gap: 8px;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 8px;
+    }
+
+    &__right {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .login {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 95%;
+
+        &__content {
+            display: flex;
+            flex-direction: row;
+        }
+
+        &__left {
+            background: var(--secondaire);
+            width: 443px;
+            padding: 65px 40px;
+
+            &__img {
+                display: none;
+            }
+
+            .btn::after {
+                right: 8rem;
+            }
+        }
+
+        &__right {
+            background: var(--primaire);
+            width: 443px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}

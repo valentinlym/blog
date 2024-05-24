@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Category index
+{% endblock %}
+
+{% block body %}
+	<div class="show">
+		<h1>Toutes les catégories</h1>
+		<p>Une liste des
+			<strong>{{categories|length}}
+				catégories</strong>
+			actuellement existants, triée par ordre alphabétique. Chaque page de catégorie liste les articles correspondants.</p>
+
+		<div class="show__container">
+			{% for category in categories %}
+				<a href="{{ path('app_category_show', {'id': category.id}) }}" class="show__item">
+					<div>
+						<p>{{ category.label }}</p>
+					</div>
+					<div>
+						<p class="show__count">{{ category.articles|length }}</p>
+					</div>
+				</a>
+			{% else %}
+				<p>Aucun résultat trouvé</p>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}

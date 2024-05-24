@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil
+{% endblock %}
+
+{% block body %}
+	<div class="example-wrapper">
+		<h1>{{ controller_name }}</h1>
+
+		<p>Voici les fonctionnalités du site :</p>
+		<ul style="padding-left:16px">
+			<li>
+				<a href="\register">Inscription</a>
+			</li>
+			<li>
+				<a href="\login">Connexion</a>
+			</li>
+			<li>
+				<a href="\articles">Articles</a>
+			</li>
+			<li>
+				<a href="\categories">Catégories</a>
+			</li>
+			<li>
+				<a href="\search?search= ">Recherche</a>
+			</li>
+			<li>
+				<a href="\admin">Espace admi</a>
+			</li>
+		</ul>
+	</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Se connecter
+{% endblock %}
+
+{% block body %}
+	<form method="post" id="sumitForm">
+		{% if error %}
+			<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+		{% endif %}
+
+		<h1>Connexion</h1>
+
+		<label for="inputEmail">Email</label>
+		<input class="champ champ__input" placeholder="exemple@exemple.com" type="email" value="{{ last_username }}" name="email" id="inputEmail" autocomplete="email" required autofocus style="margin-bottom: 16px;">
+		<label for="inputPassword">Mot de passe</label>
+		<input placeholder="Mot de passe" type="password" name="password" id="inputPassword" class="champ champ__input" autocomplete="current-password" required>
+
+		<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+		{% if app.user %}
+			<p style="margin: 16px 0 24px 0;">
+				Vous êtes connecté avec
+				{{ app.user.userIdentifier }},
+				<a href="{{ path('app_logout') }}">Déconnection</a>
+			</p>
+		{% else %}
+			<p style="margin: 16px 0 24px 0;">Vous n'avez pas encore de compte ?
+				<a href="{{ path('app_logout') }}">S'inscrire</a>
+			</p>
+		{% endif %}
+		<p style="margin: 16px 0 24px 0;">Vous avez oublié votre mot de passe ?
+			<a href="{{ path('app_forgot_password_request') }}">Mot de passe oublié</a>
+		</p>
+		<button id="btnSoumettre" class="btn" type="submit" disabled>
+			Se connecter
+		</button>
+	</form>
+{% endblock %}

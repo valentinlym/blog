@@ -1,0 +1,41 @@
+.show {
+    width: 100%;
+
+    &__container {
+        gap: 16px;
+        display: flex;
+        margin-top: 24px;
+        flex-direction: column;
+    }
+
+    &__item {
+        display: flex;
+        padding: 16px;
+        gap: 16px;
+        // align-items: center;
+        text-decoration: none;
+        flex-direction: column;
+        transition: transform .3s;
+        transition: box-shadow .3s;
+        text-transform: uppercase;
+        justify-content: space-between;
+        border: solid 2px var(--primaire);
+
+        &:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 4px 4px var(--primaire);
+        }
+    }
+
+    &__count {
+        display: flex;
+        width: 24px;
+        height: 24px;
+        color: white;
+        padding: 0 24px;
+        background: #000;
+        border-radius: 4px;
+        align-items: center;
+        justify-content: center;
+    }
+}
