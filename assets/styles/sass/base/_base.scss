@@ -131,14 +131,17 @@ span p {
 .container {
     display: flex;
     flex-grow: 1;
-    margin: 104px auto;
-    width: min(90vw,800px);
+    margin: 104px 16vw;
 }
 
 .section {
     padding: 0 16px;
 }
 form {
+    width: 100%;
+}
+
+.example-wrapper {
     width: 100%;
 }
 @media screen and (min-width: 650px) {

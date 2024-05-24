@@ -1,20 +1,23 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Category index
+{% block title %}Article index
 {% endblock %}
 
 {% block body %}
 	<div class="show">
-		<h1>{{ category.label|capitalize }}</h1>
-		<p>
-			Retrouvez les articles concernant la catégorie "{{ category.label }}" ici.
-		</p>
+		<h1>Tous les articles</h1>
+		<p>Une liste de
+			<strong>{{articles|length}}
+				article•s</strong>
+			actuellement existants, triée par ordre alphabétique. Chaque article est consultable en un clique.</p>
 
 		<div class="show__container">
-			{% for article in category.articles %}
+			{% for article in articles %}
 				<a href="{{ path('app_article_show', {'id': article.id}) }}" class="show__item">
 					<div>
-						<p><strong>{{ article.title }}</strong></p>
+						<p>
+							<strong>{{ article.title }}</strong>
+						</p>
 					</div>
 					<div>
 						<p>{{ article.userId}}</p>
@@ -25,4 +28,5 @@
 			{% endfor %}
 		</div>
 	</div>
+
 {% endblock %}
